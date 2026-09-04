@@ -1,0 +1,1 @@
+DELETE http://localhost:9012/api/v2/orderItems/del/1
