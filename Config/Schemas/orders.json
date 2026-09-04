@@ -1,0 +1,243 @@
+{
+  "containerId": "kSHeadContainer",
+  "tableName": "orders",
+  "mode": "create",
+  "layout": {
+    "verticalPosition": "top",
+    "type": "table"
+  },
+  "options": {
+    "firstRow": {
+      "showSearch": false
+    },
+    "enabledSections": [
+      "vertical",
+      "table",
+      "footer"
+    ],
+    "table": {
+      "showFooterRows": true,
+      "showDataList": true,
+      "showSave": true,
+      "showActions": true,
+      "showSerial": true,
+      "showFooter": true,
+      "footer": {
+        "showAggregateRows": false,
+        "showTotals": false,
+        "createNewRow": true
+      },
+      "body": {
+        "showEdit": true,
+        "showDelete": true,
+        "showShow": false,
+        "deleteType": "icon",
+        "deleteIconSize": "xl"
+      }
+    }
+  },
+  "callbacks": {
+    "table": {
+      "onDelete1": "function",
+      "onReadFail": "function",
+      "body": {
+        "update": "function",
+        "show": "function",
+        "edit": "function"
+      },
+      "footer": {
+        "onSave": "function"
+      }
+    }
+  },
+  "endPoints": {
+    "create": "/api/v1/orders/insertWithMeta",
+    "update": "/api/v1/orders/modify",
+    "delete": "/api/v1/orders/del",
+    "read": "/api/v1/orders/showAll",
+    "find": "",
+    "filter": "",
+    "dataLists": {},
+    "dataListEndpoints": {}
+  },
+  "columnsConfig": [
+    {
+      "columnName": "CustomerName",
+      "title": "Customer Name",
+      "field": "CustomerName",
+      "cellConfig": {
+        "width": "200px"
+      },
+      "dataListSource": "",
+      "tableFooterDataListShow": false,
+      "uiClasses": {
+        "form": {
+          "rowClass": "flex items-center space-x-4"
+        }
+      },
+      "isVisible": true,
+      "allowOnChange": false,
+      "onChangeType": "",
+      "isConsider": true,
+      "tableConfig": {
+        "footerConfig": {
+          "enterAsTab": true,
+          "isNotEmpty": true
+        }
+      }
+    },
+    {
+      "columnName": "CustomerMobile",
+      "title": "Customer Mobile",
+      "field": "CustomerMobile",
+      "cellConfig": {
+        "width": "200px"
+      },
+      "dataListSource": "",
+      "tableFooterDataListShow": false,
+      "uiClasses": {
+        "form": {
+          "rowClass": "flex items-center space-x-4"
+        }
+      },
+      "isVisible": true,
+      "allowOnChange": false,
+      "onChangeType": "",
+      "isConsider": true,
+      "tableConfig": {
+        "footerConfig": {
+          "enterAsTab": true,
+          "isNotEmpty": true
+        }
+      }
+    },
+    {
+      "columnName": "OrderDate",
+      "title": "Order Date",
+      "field": "OrderDate",
+      "cellConfig": {
+        "width": "200px"
+      },
+      "dataListSource": "",
+      "tableFooterDataListShow": false,
+      "uiClasses": {
+        "form": {
+          "rowClass": "flex items-center space-x-4"
+        }
+      },
+      "isVisible": true,
+      "allowOnChange": false,
+      "onChangeType": "",
+      "isConsider": true,
+      "tableConfig": {
+        "footerConfig": {
+          "enterAsTab": true,
+          "isNotEmpty": true
+        }
+      }
+    },
+    {
+      "columnName": "OrderNumber",
+      "title": "Order Number",
+      "field": "OrderNumber",
+      "cellConfig": {
+        "width": "200px"
+      },
+      "dataListSource": "",
+      "tableFooterDataListShow": false,
+      "uiClasses": {
+        "form": {
+          "rowClass": "flex items-center space-x-4"
+        }
+      },
+      "isVisible": true,
+      "allowOnChange": false,
+      "onChangeType": "",
+      "isConsider": true,
+      "tableConfig": {
+        "footerConfig": {
+          "enterAsTab": true,
+          "isNotEmpty": true
+        }
+      }
+    },
+    {
+      "field": "pk",
+      "title": "pk",
+      "primary": true,
+      "isVisible": false,
+      "cellConfig": {
+        "width": "50px"
+      }
+    }
+  ],
+  "columnsConfig1": [
+    {
+      "columnName": "UserName",
+      "title": "User Name",
+      "field": "UserName",
+      "cellConfig": {
+        "width": "200px"
+      },
+      "dataListSource": "",
+      "tableFooterDataListShow": false,
+      "uiClasses": {
+        "form": {
+          "rowClass": "flex items-center space-x-4"
+        }
+      },
+      "isVisible": true,
+      "allowOnChange": false,
+      "onChangeType": "",
+      "isConsider": true,
+      "tableConfig": {
+        "footerConfig": {
+          "enterAsTab": true,
+          "isNotEmpty": true
+        }
+      }
+    },
+    {
+      "columnName": "UserMobile",
+      "field": "UserMobile",
+      "title": "User Mobile",
+      "primary": true,
+      "isVisible": true,
+      "cellConfig": {
+        "width": "200px"
+      }
+    },
+    {
+      "columnName": "OrderDate",
+      "field": "OrderDate",
+      "title": "Order Date",
+      "primary": true,
+      "isVisible": true,
+      "cellConfig": {
+        "width": "200px"
+      }
+    },
+    {
+      "columnName": "OrderNumber",
+      "field": "OrderNumber",
+      "title": "Order Number",
+      "primary": true,
+      "isVisible": true,
+      "cellConfig": {
+        "width": "200px"
+      }
+    },
+    {
+      "field": "pk",
+      "title": "pk",
+      "primary": true,
+      "isVisible": false,
+      "cellConfig": {
+        "width": "50px"
+      }
+    }
+  ],
+  "defaults": {
+    "data": []
+  }
+}

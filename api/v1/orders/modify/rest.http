@@ -1,0 +1,10 @@
+PUT http://localhost:9012/api/v1/orders/modify
+Content-Type: application/json
+
+ {
+    "CustomerName": "Sreenivas",
+    "CustomerMobile": "8341111111",
+    "OrderDate": "2023-01-01",
+    "OrderNumber": "ORD004",
+    "pk": 2
+  }

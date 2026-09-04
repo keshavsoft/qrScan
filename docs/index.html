@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuotationV3 Documentation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 40px;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 25px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+        }
+
+        h2 {
+            color: #2563eb;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            margin-top: 20px;
+            color: #111827;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th {
+            background: #2563eb;
+            color: white;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        table tr:nth-child(even) {
+            background: #f7f7f7;
+        }
+
+        .step {
+            background: #eef5ff;
+            border-left: 5px solid #2563eb;
+            padding: 18px;
+            margin-top: 15px;
+        }
+
+        .flow {
+            background: #272822;
+            color: #8ef58f;
+            padding: 20px;
+            border-radius: 8px;
+            overflow: auto;
+            font-family: Consolas;
+        }
+
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            border-top: 5px solid #2563eb;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+        }
+
+        code {
+            background: #eee;
+            padding: 3px 6px;
+            border-radius: 5px;
+        }
+
+        .video-section {
+
+            background: #fff;
+
+            margin-bottom: 30px;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+        }
+
+        .video-section h2 {
+
+            color: #2563eb;
+
+            margin-bottom: 15px;
+
+        }
+
+        .video-section p {
+
+            margin-bottom: 20px;
+
+            color: #555;
+
+            font-size: 16px;
+
+        }
+
+        .video-container {
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            background: #000;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+
+        }
+
+        .video-container video {
+
+            width: 100%;
+
+            display: block;
+
+            border-radius: 12px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+
+            <h1>QuotationV3 🚀</h1>
+
+            <p>Quotation Management System Documentation</p>
+
+        </header>
+
+        <section>
+
+            <h2>Overview</h2>
+
+            <p>
+
+                QuotationV3 is a complete CRUD-based quotation management application.
+
+                It allows users to
+
+            </p>
+
+            <ul>
+
+                <li>Create Quotations</li>
+
+                <li>Add Multiple Items</li>
+
+                <li>Edit Header Details</li>
+
+                <li>Edit/Delete Items</li>
+
+                <li>View All Quotations</li>
+
+                <li>Sort Quotations by Latest Activity</li>
+
+                <li>Print Quotations</li>
+
+            </ul>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- Product Demo Video -->
+        <!-- ========================= -->
+
+        <section class="video-section">
+
+            <h2>🎥 QuotationV3 Demo Video</h2>
+
+            <p>
+                Watch the complete workflow of QuotationV3, including creating a quotation,
+                adding items, editing records, viewing quotations, sorting by latest activity,
+                and printing the final quotation.
+            </p>
+
+            <div class="video-container">
+
+                <video controls preload="metadata" width="100%" poster="./Demo.png">
+
+                    <source src="./Demo.mp4" type="video/mp4">
+
+                    Your browser does not support HTML5 video.
+
+                </video>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Create New Quotation</h2>
+
+            <div class="step">
+
+                <h3>Step 1</h3>
+
+                Fill the quotation information.
+
+            </div>
+
+            <table>
+
+                <tr>
+
+                    <th>Field</th>
+
+                    <th>Description</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>Ledger Name</td>
+
+                    <td>Customer or Company Name</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Invoice Date</td>
+
+                    <td>Quotation Date</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Party GSTIN</td>
+
+                    <td>GST Number</td>
+
+                </tr>
+
+            </table>
+
+            <br>
+
+            Click the
+
+            <b>Save</b>
+
+            button.
+
+            <br><br>
+
+            The application automatically redirects to the Item Entry screen.
+
+        </section>
+
+        <section>
+
+            <h2>Add Quotation Items</h2>
+
+            <table>
+
+                <tr>
+
+                    <th>Field</th>
+
+                    <th>Description</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>ItemName</td>
+
+                    <td>Product Name</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Qty</td>
+
+                    <td>Quantity</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>OrigRate</td>
+
+                    <td>Original Rate</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>OrigAmount</td>
+
+                    <td>Original Amount</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>RateInc</td>
+
+                    <td>Rate Including Tax</td>
+
+                </tr>
+
+                <tr>
+
+                    <td>Amount</td>
+
+                    <td>Total Amount</td>
+
+                </tr>
+
+            </table>
+
+            <br>
+
+            Click
+
+            <b>Save</b>
+
+            to insert the item.
+
+        </section>
+
+        <section>
+
+            <h2>Add Multiple Items</h2>
+
+            <p>
+
+                Repeat the process until all products are added.
+
+            </p>
+
+            <ul>
+
+                <li>Pant</li>
+
+                <li>Shirt</li>
+
+                <li>Jeans</li>
+
+                <li>T-Shirt</li>
+
+                <li>Shoes</li>
+
+            </ul>
+
+            <p>
+
+                Every click on
+
+                <b>Save</b>
+
+                adds another item.
+
+            </p>
+
+        </section>
+
+        <section>
+
+            <h2>Edit & Delete Items</h2>
+
+            <div class="step">
+
+                <b>Edit</b>
+
+                Use the Edit button to modify any incorrect item.
+
+            </div>
+
+            <div class="step">
+
+                <b>Delete</b>
+
+                Remove unwanted items using the Delete button.
+
+            </div>
+
+            <div class="step">
+
+                <b>Edit Header</b>
+
+                Modify Ledger Name, GSTIN or Invoice Date using the Edit button.
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Header Menu</h2>
+
+            <div class="menu">
+
+                <div class="card">
+
+                    <h3>🆕 Create</h3>
+
+                    <p>
+
+                        Opens the quotation creation page for creating a new quotation.
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>📋 ShowAll</h3>
+
+                    <p>
+
+                        Displays all quotations with Ledger Name, Invoice Date and GSTIN.
+
+                    </p>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>⬇ Descend</h3>
+
+                    <p>
+
+                        Shows quotations sorted by latest activity.
+
+                        TimeSpan displays
+
+                    </p>
+
+                    <ul>
+
+                        <li>2 min ago</li>
+
+                        <li>10 min ago</li>
+
+                        <li>1 hour ago</li>
+
+                        <li>Yesterday</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="card">
+
+                    <h3>🖨 Print</h3>
+
+                    <p>
+
+                        Opens browser print preview.
+
+                        Users can print or save as PDF.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Workflow</h2>
+
+            <div class="flow">
+
+                Create Quotation
+
+                ↓
+
+                Fill Ledger Details
+
+                ↓
+
+                Save
+
+                ↓
+
+                Item Entry
+
+                ↓
+
+                Add Item
+
+                ↓
+
+                Save
+
+                ↓
+
+                Add More Items
+
+                ↓
+
+                Edit/Delete Items
+
+                ↓
+
+                Edit Header
+
+                ↓
+
+                ShowAll
+
+                ↓
+
+                Descend
+
+                ↓
+
+                Print
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h2>Features Summary</h2>
+
+            <ul>
+
+                <li>✔ Create Quotation</li>
+
+                <li>✔ Multiple Items</li>
+
+                <li>✔ Edit Header</li>
+
+                <li>✔ Edit Items</li>
+
+                <li>✔ Delete Items</li>
+
+                <li>✔ View All Quotations</li>
+
+                <li>✔ Descending Order View</li>
+
+                <li>✔ TimeSpan Column</li>
+
+                <li>✔ Print / Save PDF</li>
+
+                <li>✔ User Friendly Interface</li>
+
+            </ul>
+
+        </section>
+
+        <footer>
+
+            QuotationV3 • Version 15
+
+            <br><br>
+
+            Developed by <b>KeshavSoft</b>
+
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

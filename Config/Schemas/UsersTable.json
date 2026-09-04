@@ -1,0 +1,71 @@
+{
+    "tableName": "UsersTable",
+    "columns": [
+        {
+            "field": "UserName",
+            "title": "UserName",
+            "unique": true,
+            "type": "text",
+            "isInput": true,
+            "isAutoFocus": true
+        },
+        {
+            "field": "Password",
+            "title": "Password",
+            "type": "text",
+            "isInput": true
+        },
+        {
+            "field": "DataPK",
+            "title": "DataPK",
+            "type": "text",
+            "isInput": true
+        }
+    ],
+    "data": [
+        {
+            "UserName": "Keshav",
+            "Password": "9848163021",
+            "DataPk": "902"
+        },
+        {
+            "UserName": "901",
+            "Password": "901",
+            "DataPk": "901"
+        },
+        {
+            "UserName": "903",
+            "Password": "903",
+            "DataPk": "903"
+        }
+    ],
+    "Vertical": [
+        {
+            "field": "UserName",
+            "title": "UserName",
+            "unique": true,
+            "type": "text",
+            "isInput": true
+        },
+        {
+            "field": "Password",
+            "title": "Password",
+            "type": "text",
+            "isInput": true
+        },
+        {
+            "field": "DataPK",
+            "title": "DataPK",
+            "type": "text",
+            "isInput": true
+        }
+    ],
+    "DataTableOptions": {
+        "Header": {
+            "autoFocus": "title"
+        }
+    },
+    "SubRoutes": [
+        "Read"
+    ]
+}
