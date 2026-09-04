@@ -1,0 +1,11 @@
+PUT http://localhost:9012/api/v1/orderItems/modify
+Content-Type: application/json
+
+{
+    "orderId": "01",
+    "ItemName": "saree",
+    "Rate": "100",
+    "Pcs": "2",
+    "Amount": "200",
+    "pk": 1
+  }
