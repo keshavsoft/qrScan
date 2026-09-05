@@ -1,6 +1,6 @@
 {
   "containerId": "kSHeadContainer",
-  "tableName": "orders",
+  "tableName": "masterItems",
   "mode": "create",
   "layout": {
     "verticalPosition": "top",
@@ -62,9 +62,9 @@
   },
   "columnsConfig": [
     {
-      "columnName": "CustomerName",
-      "title": "Customer Name",
-      "field": "CustomerName",
+      "columnName": "Category",
+      "title": "Category",
+      "field": "Category",
       "cellConfig": {
         "width": "200px"
       },
@@ -87,9 +87,9 @@
       }
     },
     {
-      "columnName": "CustomerMobile",
-      "title": "Customer Mobile",
-      "field": "CustomerMobile",
+      "columnName": "ItemName",
+      "title": "Item Name",
+      "field": "ItemName",
       "cellConfig": {
         "width": "200px"
       },
@@ -112,9 +112,9 @@
       }
     },
     {
-      "columnName": "OrderDate",
-      "title": "Order Date",
-      "field": "OrderDate",
+      "columnName": "Service",
+      "title": "Service",
+      "field": "Service",
       "cellConfig": {
         "width": "200px"
       },
@@ -137,34 +137,9 @@
       }
     },
     {
-      "columnName": "OrderNumber",
-      "title": "Order Number",
-      "field": "OrderNumber",
-      "cellConfig": {
-        "width": "200px"
-      },
-      "dataListSource": "",
-      "tableFooterDataListShow": false,
-      "uiClasses": {
-        "form": {
-          "rowClass": "flex items-center space-x-4"
-        }
-      },
-      "isVisible": true,
-      "allowOnChange": false,
-      "onChangeType": "",
-      "isConsider": true,
-      "tableConfig": {
-        "footerConfig": {
-          "enterAsTab": true,
-          "isNotEmpty": true
-        }
-      }
-    },
-    {
-      "columnName": "orderId",
-      "title": "Order ID",
-      "field": "orderId",
+      "columnName": "Rate",
+      "title": "Rate",
+      "field": "Rate",
       "cellConfig": {
         "width": "200px"
       },
