@@ -18,5 +18,5 @@ const { port } = startServer(app);
 app.use("/api", routerFromapi);
 
 if (process.env.OPEN_BROWSER === "true") {
-    exec(`start http://localhost:${port}/v3/doctors/index.html`);
+    // exec(`start http://localhost:${port}/v3/doctors/index.html`);
 };
