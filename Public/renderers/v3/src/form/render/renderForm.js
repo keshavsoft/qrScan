@@ -1,7 +1,7 @@
-import { buildForm } from "./formBuilder/buildForm.js";
-import { pruneTreeWithIds } from "../common/pruneTreeWithIds.js";
+import { buildForm } from "../formBuilder/index.js";
+import { pruneTreeWithIds } from "../../common/pruneTreeWithIds.js";
 
-export const renderForm = ({ inForm } = {}) => {
+const renderForm = ({ inForm } = {}) => {
     const localForm = inForm;
     if (!localForm) return null;
 
@@ -39,4 +39,5 @@ export const renderForm = ({ inForm } = {}) => {
     };
 };
 
+export { renderForm };
 export default renderForm;

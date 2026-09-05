@@ -1,6 +1,6 @@
-import { resolveClasses } from "./resolveClasses.js";
+import { resolveClasses } from "../classes/index.js";
 
-export const setTheme = ({ inForm, inTheme = "default" } = {}) => {
+const setTheme = ({ inForm, inTheme = "default" } = {}) => {
     const localForm = inForm;
     const localTheme = inTheme || "default";
 
@@ -19,4 +19,5 @@ export const setTheme = ({ inForm, inTheme = "default" } = {}) => {
     }
 };
 
+export { setTheme };
 export default setTheme;

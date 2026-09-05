@@ -1,14 +1,19 @@
-import defaultLayouts from "./layouts.json" with { type: "json" };
-import defaultThemes from "./themes.json" with { type: "json" };
+import { layouts } from "../layout/index.js";
+import { themes } from "../theme/index.js";
 
-export const resolveClasses = ({ inLayout = "stacked", inTheme = "default", inConfigClasses = {}, inCustomClasses = {} } = {}) => {
+const resolveClasses = ({
+    inLayout = "stacked",
+    inTheme = "default",
+    inConfigClasses = {},
+    inCustomClasses = {}
+} = {}) => {
     const localLayout = inLayout || "stacked";
     const localTheme = inTheme || "default";
     const localConfigClasses = inConfigClasses || {};
     const localCustomClasses = inCustomClasses || {};
 
-    const layoutObj = defaultLayouts[localLayout] || defaultLayouts["stacked"] || {};
-    const themeObj = defaultThemes[localTheme] || defaultThemes["default"] || {};
+    const layoutObj = layouts[localLayout] || layouts["stacked"] || {};
+    const themeObj = themes[localTheme] || themes["default"] || {};
 
     const allKeys = new Set([
         ...Object.keys(layoutObj),
@@ -31,11 +36,11 @@ export const resolveClasses = ({ inLayout = "stacked", inTheme = "default", inCo
             .split(/\s+/)
             .filter(Boolean);
 
-        // Deduplicate classes preserving order
         resolved[key] = Array.from(new Set(tokens)).join(" ");
     }
 
     return resolved;
 };
 
+export { resolveClasses };
 export default resolveClasses;

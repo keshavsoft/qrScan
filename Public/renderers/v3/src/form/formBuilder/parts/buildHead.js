@@ -1,5 +1,6 @@
-export const buildHead = ({ inHeadConfig = {} } = {}) => {
+const buildHead = ({ inHeadConfig = {}, inClasses = {} } = {}) => {
     const localHeadConfig = inHeadConfig;
+    const localClasses = inClasses;
 
     const title = localHeadConfig?.title || "";
     const subtitle = localHeadConfig?.subtitle || "";
@@ -10,31 +11,34 @@ export const buildHead = ({ inHeadConfig = {} } = {}) => {
 
     if (title) {
         children.push({
-            tagName: "label",
+            tagName: "div",
             textContent: title,
             attributes: {
-                class: "block text-lg font-bold text-slate-900"
+                class: localClasses?.headTitle || "h5 fw-bold mb-1"
             }
         });
     }
 
     if (subtitle) {
         children.push({
-            tagName: "label",
+            tagName: "div",
             textContent: subtitle,
             attributes: {
-                class: "block text-xs text-slate-500 mt-0.5"
+                class: localClasses?.headSubtitle || "text-muted small"
             }
         });
     }
 
+    const headClass = localClasses?.head || localHeadConfig?.class || "pb-2 mb-3 border-bottom";
+
     return {
         tagName: "div",
         attributes: {
-            class: "border-b border-slate-200 pb-4 mb-2"
+            class: headClass
         },
         children
     };
 };
 
+export { buildHead };
 export default buildHead;

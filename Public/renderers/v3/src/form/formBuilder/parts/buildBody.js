@@ -1,6 +1,6 @@
-import { buildField } from "../field/buildField.js";
+import { buildField } from "../field/index.js";
 
-export const buildBody = ({ inColumns = [], inConfig = {}, inClasses = {} } = {}) => {
+const buildBody = ({ inColumns = [], inConfig = {}, inClasses = {} } = {}) => {
     const localColumns = inColumns;
     const localConfig = inConfig;
     const localClasses = inClasses;
@@ -18,4 +18,5 @@ export const buildBody = ({ inColumns = [], inConfig = {}, inClasses = {} } = {}
     };
 };
 
+export { buildBody };
 export default buildBody;

@@ -1,4 +1,4 @@
-export const buildFoot = ({ inFootConfig = {}, inClasses = {} } = {}) => {
+const buildFoot = ({ inFootConfig = {}, inClasses = {} } = {}) => {
     const localFootConfig = inFootConfig;
     const localClasses = inClasses;
 
@@ -40,4 +40,5 @@ export const buildFoot = ({ inFootConfig = {}, inClasses = {} } = {}) => {
     };
 };
 
+export { buildFoot };
 export default buildFoot;

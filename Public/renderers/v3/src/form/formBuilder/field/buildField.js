@@ -1,4 +1,4 @@
-export const buildField = ({ inColumn = {}, inClasses = {}, inConfig = {} } = {}) => {
+const buildField = ({ inColumn = {}, inClasses = {}, inConfig = {} } = {}) => {
     const localColumn = inColumn;
     const localClasses = inClasses;
     const localConfig = inConfig;
@@ -85,4 +85,5 @@ export const buildField = ({ inColumn = {}, inClasses = {}, inConfig = {} } = {}
     };
 };
 
+export { buildField };
 export default buildField;

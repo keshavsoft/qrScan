@@ -1,8 +1,6 @@
-import { buildHead } from "./parts/buildHead.js";
-import { buildBody } from "./parts/buildBody.js";
-import { buildFoot } from "./parts/buildFoot.js";
+import { buildHead, buildBody, buildFoot } from "./parts/index.js";
 
-export const buildForm = ({ inColumns = [], inConfig = {}, inClasses = {} } = {}) => {
+const buildForm = ({ inColumns = [], inConfig = {}, inClasses = {} } = {}) => {
     const localColumns = inColumns;
     const localConfig = inConfig;
     const localClasses = inClasses;
@@ -20,4 +18,5 @@ export const buildForm = ({ inColumns = [], inConfig = {}, inClasses = {} } = {}
     };
 };
 
+export { buildForm };
 export default buildForm;

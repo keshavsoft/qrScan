@@ -1,6 +1,6 @@
-import { resolveClasses } from "./resolveClasses.js";
+import { resolveClasses } from "../classes/index.js";
 
-export const setLayout = ({ inForm, inLayout = "stacked" } = {}) => {
+const setLayout = ({ inForm, inLayout = "stacked" } = {}) => {
     const localForm = inForm;
     const localLayout = inLayout || "stacked";
 
@@ -19,4 +19,5 @@ export const setLayout = ({ inForm, inLayout = "stacked" } = {}) => {
     }
 };
 
+export { setLayout };
 export default setLayout;

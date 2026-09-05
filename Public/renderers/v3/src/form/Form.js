@@ -1,24 +1,30 @@
 import { FormStore } from "./formStore/index.js";
-import { renderForm } from "./renderForm.js";
-import { setTheme } from "./setTheme.js";
-import { setLayout } from "./setLayout.js";
-import { resolveClasses } from "./resolveClasses.js";
+import { renderForm } from "./render/index.js";
+import { setLayout } from "./layout/index.js";
+import { setTheme } from "./theme/index.js";
+import { resolveClasses } from "./classes/index.js";
 
-export class Form {
+class Form {
     constructor({
         columns = [],
         config = {},
         layout,
         theme,
         classes = {},
-        targetContainerId = "form-container"
+        targetContainerId = "form-container",
+        inColumns,
+        inConfig,
+        inLayout,
+        inTheme,
+        inClasses,
+        inTargetContainerId
     } = {}) {
-        const localColumns = columns;
-        const localConfig = config;
-        const localLayout = layout || localConfig?.layout || "stacked";
-        const localTheme = theme || localConfig?.theme || "default";
-        const localClasses = classes;
-        const localTargetContainerId = targetContainerId;
+        const localColumns = inColumns || columns;
+        const localConfig = inConfig || config;
+        const localLayout = inLayout || layout || localConfig?.layout || "stacked";
+        const localTheme = inTheme || theme || localConfig?.theme || "default";
+        const localClasses = inClasses || classes;
+        const localTargetContainerId = inTargetContainerId || targetContainerId;
 
         this.containerId = localTargetContainerId;
         this.layout = localLayout;
@@ -71,4 +77,5 @@ export class Form {
     }
 }
 
+export { Form };
 export default Form;
