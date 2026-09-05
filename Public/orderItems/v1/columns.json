@@ -1,0 +1,42 @@
+[
+    {
+        "key": "orderId",
+        "label": "Order ID",
+        "type": "string",
+        "id": "orderid-id"
+    },
+     {
+        "key": "CustomerName",
+        "label": "Customer Name",
+        "type": "string"
+    },
+     {
+        "key": "CustomerMobile",
+        "label": "Customer Mobile",
+        "type": "string"
+    },
+    {
+        "key": "ItemName",
+        "label": "Item Name",
+        "type": "string"
+    },
+    {
+        "key": "Rate",
+        "label": "Rate",
+        "type": "number",
+        "align": "right"
+
+    },
+    {
+        "key": "Pcs",
+        "label": "Pcs",
+        "type": "number",
+        "align": "right"
+    },
+    {
+        "key": "Amount",
+        "label": "Amount",
+        "type": "number",
+        "align": "right"
+    }
+]
