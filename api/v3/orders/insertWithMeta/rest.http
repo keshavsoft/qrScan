@@ -1,0 +1,10 @@
+POST http://localhost:9012/api/v3/orders/insertWithMeta
+Content-Type: application/json
+
+{
+  "CustomerName": "",
+  "CustomerMobile": "",
+  "OrderDate": "",
+  "OrderNumber": "",
+  "orderId": ""
+}

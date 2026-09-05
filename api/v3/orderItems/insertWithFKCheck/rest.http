@@ -1,0 +1,10 @@
+POST http://localhost:9012/api/v3/orderItems/insertWithFKCheck
+Content-Type: application/json
+
+{
+  "orderId": "3",
+  "ItemName": "Sample Item",
+  "Rate": "10.00",
+  "Pcs": "5",
+  "Amount": "50.00"
+}

@@ -1,0 +1,10 @@
+POST http://localhost:9012/api/v3/orderItems/insertWithMeta
+Content-Type: application/json
+
+{
+  "orderId": "",
+  "ItemName": "",
+  "Rate": "",
+  "Pcs": "",
+  "Amount": ""
+}
