@@ -2,8 +2,8 @@ import columns from "./columns.json" with { type: "json" };
 import formConfig from "./form/config.json" with { type: "json" };
 import datalistConfig from "./datalist/config.json" with { type: "json" };
 
-// 1. Hook to locally transported renderers (zero CDN delay, instant dev updates)
-import { Form, DataList, createDataProvider } from "../../../renderers/v1/src/index.js";
+// 1. Hook to locally transported renderers (v2 with modular Form)
+import { Form, DataList, createDataProvider } from "../../../renderers/v2/src/index.js";
 
 // 2. Data Provider configured with endpoints for autocomplete reading and order insertion
 const dataProvider = createDataProvider({
