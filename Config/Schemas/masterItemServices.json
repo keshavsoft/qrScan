@@ -1,0 +1,102 @@
+{
+  "containerId": "kSHeadContainer",
+  "tableName": "mastersItemServices",
+  "mode": "create",
+  "layout": {
+    "verticalPosition": "top",
+    "type": "table"
+  },
+  "options": {
+    "firstRow": {
+      "showSearch": false
+    },
+    "enabledSections": [
+      "vertical",
+      "table",
+      "footer"
+    ],
+    "table": {
+      "showFooterRows": true,
+      "showDataList": true,
+      "showSave": true,
+      "showActions": true,
+      "showSerial": true,
+      "showFooter": true,
+      "footer": {
+        "showAggregateRows": false,
+        "showTotals": false,
+        "createNewRow": true
+      },
+      "body": {
+        "showEdit": true,
+        "showDelete": true,
+        "showShow": false,
+        "deleteType": "icon",
+        "deleteIconSize": "xl"
+      }
+    }
+  },
+  "callbacks": {
+    "table": {
+      "onDelete1": "function",
+      "onReadFail": "function",
+      "body": {
+        "update": "function",
+        "show": "function",
+        "edit": "function"
+      },
+      "footer": {
+        "onSave": "function"
+      }
+    }
+  },
+  "endPoints": {
+    "create": "/api/v1/orders/insertWithMeta",
+    "update": "/api/v1/orders/modify",
+    "delete": "/api/v1/orders/del",
+    "read": "/api/v1/orders/showAll",
+    "find": "",
+    "filter": "",
+    "dataLists": {},
+    "dataListEndpoints": {}
+  },
+  "columnsConfig": [
+    {
+      "columnName": "ItemService",
+      "title": "Item Service",
+      "field": "ItemService",
+      "cellConfig": {
+        "width": "200px"
+      },
+      "dataListSource": "",
+      "tableFooterDataListShow": false,
+      "uiClasses": {
+        "form": {
+          "rowClass": "flex items-center space-x-4"
+        }
+      },
+      "isVisible": true,
+      "allowOnChange": false,
+      "onChangeType": "",
+      "isConsider": true,
+      "tableConfig": {
+        "footerConfig": {
+          "enterAsTab": true,
+          "isNotEmpty": true
+        }
+      }
+    },
+    {
+      "field": "pk",
+      "title": "pk",
+      "primary": true,
+      "isVisible": false,
+      "cellConfig": {
+        "width": "50px"
+      }
+    }
+  ],
+  "defaults": {
+    "data": []
+  }
+}

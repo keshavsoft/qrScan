@@ -1,6 +1,6 @@
 {
   "containerId": "kSHeadContainer",
-  "tableName": "orders",
+  "tableName": "masterCustomers",
   "mode": "create",
   "layout": {
     "verticalPosition": "top",
@@ -112,9 +112,9 @@
       }
     },
     {
-      "columnName": "OrderDate",
-      "title": "Order Date",
-      "field": "OrderDate",
+      "columnName": "Branch",
+      "title": "Branch",
+      "field": "Branch",
       "cellConfig": {
         "width": "200px"
       },
@@ -137,34 +137,9 @@
       }
     },
     {
-      "columnName": "OrderNumber",
-      "title": "Order Number",
-      "field": "OrderNumber",
-      "cellConfig": {
-        "width": "200px"
-      },
-      "dataListSource": "",
-      "tableFooterDataListShow": false,
-      "uiClasses": {
-        "form": {
-          "rowClass": "flex items-center space-x-4"
-        }
-      },
-      "isVisible": true,
-      "allowOnChange": false,
-      "onChangeType": "",
-      "isConsider": true,
-      "tableConfig": {
-        "footerConfig": {
-          "enterAsTab": true,
-          "isNotEmpty": true
-        }
-      }
-    },
-    {
-      "columnName": "orderId",
-      "title": "Order ID",
-      "field": "orderId",
+      "columnName": "Address",
+      "title": "Address",
+      "field": "Address",
       "cellConfig": {
         "width": "200px"
       },
