@@ -2,8 +2,8 @@ import columns from "./columns.json" with { type: "json" };
 import formConfig from "./form/config.json" with { type: "json" };
 import datalistConfig from "./datalist/config.json" with { type: "json" };
 
-// 1. Hook to locally transported renderers (v3 with clean Layout and Theme separation)
-import { Form, DataList, createDataProvider } from "../../../renderers/v3/src/index.js";
+// 1. Hook to locally transported renderers (v4 with modular Form, Table, and DataList)
+import { Form, DataList, createDataProvider } from "../../../renderers/v4/src/index.js";
 
 // 2. Data Provider configured with endpoints for autocomplete reading and order insertion
 const dataProvider = createDataProvider({
