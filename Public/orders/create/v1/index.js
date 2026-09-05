@@ -2,8 +2,8 @@ import columns from "./columns.json" with { type: "json" };
 import formConfig from "./form/config.json" with { type: "json" };
 import datalistConfig from "./datalist/config.json" with { type: "json" };
 
-// 1. Hook to locally transported renderers (v2 with modular Form)
-import { Form, DataList, createDataProvider } from "../../../renderers/v2/src/index.js";
+// 1. Hook to locally transported renderers (v3 with clean Layout and Theme separation)
+import { Form, DataList, createDataProvider } from "../../../renderers/v3/src/index.js";
 
 // 2. Data Provider configured with endpoints for autocomplete reading and order insertion
 const dataProvider = createDataProvider({
@@ -26,13 +26,25 @@ const startFunc = async () => {
 
     dataList.render();
 
-    // 5. Instantiate and render vertical Create Form
+    // Support testing layout/theme directly via URL query params (?layout=horizontal, ?layout=inline, ?theme=dark)
+    const urlParams = new URLSearchParams(window.location.search);
+    const layoutParam = urlParams.get("layout");
+    const themeParam = urlParams.get("theme");
+
+    if (layoutParam === "inline" || layoutParam === "horizontal") {
+        const container = document.querySelector(".container");
+        if (container) container.style.maxWidth = "960px";
+    }
+
+    // 5. Instantiate and render Create Form
     const form = new Form({
-        theme: "default",
+        layout: layoutParam || formConfig.layout,
+        theme: themeParam || formConfig.theme,
         columns,
         config: formConfig,
         targetContainerId: "form-container"
     });
+    window.form = form;
 
     const fromForm = form.render();
     const formElement = fromForm.element;

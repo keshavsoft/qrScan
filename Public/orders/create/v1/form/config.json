@@ -1,12 +1,7 @@
 {
+    "layout": "stacked",
+    "theme": "default",
     "searchButtons": false,
-    "classes": {
-        "form": "p-0 mb-0",
-        "body": "row g-3",
-        "field": "col-12",
-        "label": "form-label fw-semibold text-secondary small mb-1",
-        "input": "form-control"
-    },
     "body": {
         "columns": [
             "orderId",
