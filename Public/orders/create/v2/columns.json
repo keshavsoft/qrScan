@@ -1,0 +1,28 @@
+[
+    {
+        "key": "orderId",
+        "label": "Order ID",
+        "type": "string",
+        "id": "orderid-id"
+    },
+    {
+        "key": "CustomerName",
+        "label": "Customer Name",
+        "type": "string"
+    },
+    {
+        "key": "CustomerMobile",
+        "label": "Customer Mobile",
+        "type": "string"
+    },
+    {
+        "key": "OrderDate",
+        "label": "Order Date",
+        "type": "string"
+    },
+    {
+        "key": "OrderNumber",
+        "label": "Order Number",
+        "type": "string"
+    }
+]

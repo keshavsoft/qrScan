@@ -1,0 +1,26 @@
+{
+    "layout": "stacked",
+    "theme": "default",
+    "searchButtons": false,
+    "body": {
+        "columns": [
+            "orderId",
+            "CustomerName",
+            "CustomerMobile",
+            "OrderDate",
+            "OrderNumber"
+        ]
+    },
+    "foot": {
+        "buttons": [
+            {
+                "id": "createButtonId",
+                "name": "createButton",
+                "label": "Create Order",
+                "variant": "primary",
+                "type": "button",
+                "class": "btn btn-primary w-100 py-2 fw-semibold"
+            }
+        ]
+    }
+}
