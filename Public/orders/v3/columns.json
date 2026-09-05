@@ -1,34 +1,28 @@
 [
     {
-        "key": "vchtype",
-        "label": "Vch Type",
+        "key": "orderId",
+        "label": "Order ID",
         "type": "string",
-        "id": "vchtype-id"
+        "id": "orderid-id"
     },
     {
-        "key": "vouchernumber",
-        "label": "Vch No",
+        "key": "CustomerMobile",
+        "label": "CustomerMobile",
         "type": "string"
     },
     {
-        "key": "allinventoryentries.stockitemname",
-        "label": "Stock Item Name",
+        "key": "CustomerMobile",
+        "label": "Customer Mobile",
         "type": "string"
     },
     {
-        "key": "allinventoryentries.batchallocations.batchname",
-        "label": "Batch Name",
+        "key": "OrderDate",
+        "label": "Order Date",
         "type": "string"
     },
     {
-        "key": "allinventoryentries.batchallocations.amount",
-        "label": "Amount",
-        "type": "number",
-        "align": "right"
-    },
-    {
-        "key": "allinventoryentries.batchallocations.actualqty",
-        "label": "Actual Qty",
+        "key": "OrderNumber",
+        "label": "Order Number",
         "type": "string"
     }
 ]

@@ -4,11 +4,11 @@ import searchConfig from "./search/config.json" with { type: "json" };
 import datalistConfig from "./datalist/config.json" with { type: "json" };
 
 // Import everything cleanly from CDN (v11 with DataProvider)
-import { Table, Form, DataList, createDataProvider } from "https://cdn.jsdelivr.net/gh/keshavsoft/json-to-dom-renderers/docs/dist/v11/min.js";
+import { Table, Form, DataList, createDataProvider } from "https://keshavsoft.github.io/json-to-dom-renderers/dist/v11/min.js";
 
 // 1. Data Provider configured from the outside with fetch endpoint
 const dataProvider = createDataProvider({
-    inReadUrl: "./data.json"
+    inReadUrl: "/api/v2/orders/showAll"
 });
 
 const startFunc = async () => {

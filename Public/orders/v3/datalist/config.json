@@ -1,8 +1,8 @@
 {
     "datalist": {
         "columns": [
-            "allinventoryentries.stockitemname",
-            "allinventoryentries.batchallocations.batchname"
+            "CustomerName",
+            "CustomerMobile"
         ]
     }
 }
