@@ -1,10 +1,11 @@
 import { buildBody } from "../tableBuilder/parts/index.js";
 
-const repaintBody = ({ inTableElement, inColumns = [], inData = [], inRowConfig = {}, inClasses = {} } = {}) => {
+const repaintBody = ({ inTableElement, inColumns = [], inData = [], inRowConfig = {}, inColumnsConfig = [], inClasses = {} } = {}) => {
     const localTableElement = inTableElement;
     const localColumns = inColumns;
     const localData = inData;
     const localRowConfig = inRowConfig;
+    const localColumnsConfig = inColumnsConfig;
     const localClasses = inClasses;
 
     if (!localTableElement) return;
@@ -13,6 +14,7 @@ const repaintBody = ({ inTableElement, inColumns = [], inData = [], inRowConfig 
         inColumns: localColumns,
         inData: localData,
         inRowConfig: localRowConfig,
+        inColumnsConfig: localColumnsConfig,
         inClasses: localClasses
     });
 

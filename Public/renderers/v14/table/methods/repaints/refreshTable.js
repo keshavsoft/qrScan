@@ -13,6 +13,7 @@ const refreshTable = ({ inTableElement, inStore, inClasses = {} } = {}) => {
         inColumns: localStore.activeColumns,
         inData: localStore.stateData,
         inRowConfig: localStore.config?.row,
+        inColumnsConfig: localStore.source?.config?.columnsConfig || localStore.config?.columnsConfig || [],
         inClasses: localClasses
     });
 

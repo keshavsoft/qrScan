@@ -1,13 +1,13 @@
 import { buildRow } from "../row/buildRow.js";
 
 const buildBody = ({ inColumns = [], inData = [], inRowConfig = {},
-    inClasses = {}, inColumnsConfig: inColumnsConfig } = {}) => {
+    inClasses = {}, inColumnsConfig = [] } = {}) => {
 
     const localColumns = inColumns;
     const localData = inData;
     const localRowConfig = inRowConfig;
     const localClasses = inClasses;
-    const localColumnsConfig = inColumnsConfig;
+    const localColumnsConfig = Array.isArray(inColumnsConfig) ? inColumnsConfig : [];
 
     // console.log("----------------:", localColumnsConfig);
 
@@ -36,9 +36,9 @@ const buildBody = ({ inColumns = [], inData = [], inRowConfig = {},
     const bodyRows = localData.map(row => {
         const cells = localColumns.map(col => {
 
-            const findConfig = localColumnsConfig.find(loopConfig => {
-                return loopConfig.key === col.key;
-            });
+            const findConfig = Array.isArray(localColumnsConfig)
+                ? localColumnsConfig.find(loopConfig => loopConfig.key === col.key)
+                : undefined;
 
             const loopInsideAttributes = findConfig?.tbody?.td?.attributes || findConfig?.tbody?.th?.attributes;
 

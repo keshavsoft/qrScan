@@ -56,6 +56,9 @@ const renderTable = async ({ inTable, inContainerId, inContainer, inQuery = {} }
         container.appendChild(tableElement);
     }
 
+    localTable.tableElement = tableElement;
+    localTable.controlsTree = controlsTree;
+
     return {
         treeWithIds: controlsTree,
         spec: tableSpec,
