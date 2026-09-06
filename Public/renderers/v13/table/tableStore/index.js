@@ -1,23 +1,33 @@
-import { SourceStore } from "../../common/SourceStore.js";
+import { buildSource, resolveActiveColumns } from "../../common/SourceStore.js";
 import { buildLibrary } from "./buildLibrary/index.js";
 import { runFilter } from "./filter/index.js";
 
-class TableStore extends SourceStore {
+class TableStore {
     constructor({ inData = [], inColumns = [], inConfig = {} } = {}) {
         const localData = inData;
         const localColumns = inColumns;
         const localConfig = inConfig;
 
-        super({
+        // 1. Explicitly build source: pristine baseline inputs (originalData, columns, config)
+        this.source = buildSource({
             inData: localData,
             inColumns: localColumns,
             inConfig: localConfig
         });
 
+        // 2. Explicitly build library: active computed state (stateData, activeColumns, computedFooter, isSerialEnabled)
         this.library = buildLibrary({
             inSource: this.source,
-            inResolveColumns: this._resolveActiveColumns.bind(this)
+            inResolveColumns: resolveActiveColumns
         });
+    }
+
+    get rawData() {
+        return this.source.originalData;
+    }
+
+    get config() {
+        return this.source.config;
     }
 
     get stateData() {
@@ -38,7 +48,7 @@ class TableStore extends SourceStore {
         this.source.originalData = Array.isArray(localData) ? localData : [];
         this.library = buildLibrary({
             inSource: this.source,
-            inResolveColumns: this._resolveActiveColumns.bind(this)
+            inResolveColumns: resolveActiveColumns
         });
 
         return this.library.stateData;

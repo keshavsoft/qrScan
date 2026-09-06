@@ -4,6 +4,7 @@ import { themes, setTheme } from "./theme/index.js";
 import { resolveClasses } from "./classes/index.js";
 import { methods, createMethods } from "./methods/index.js";
 import { actions, createActions } from "./actions/index.js";
+import { config as templateConfig } from "./templates/index.js";
 
 class Table {
     constructor({
@@ -44,7 +45,7 @@ class Table {
             inColumns: localColumns,
             inConfig: localConfig
         });
-
+        console.log("this.store : ", this.store);
         this.methods = createMethods({ inTable: this });
         this.actions = createActions({ inTable: this });
     }
@@ -128,6 +129,7 @@ class Table {
 
 Table.layouts = Object.keys(layouts);
 Table.themes = Object.keys(themes);
+Table.configTemplate = templateConfig;
 
-export { Table, methods, actions };
+export { Table, methods, actions, templateConfig };
 export default Table;

@@ -32,6 +32,7 @@ const renderTable = ({ inTable } = {}) => {
         inRowConfig: localTable.store.config?.row,
         inClasses: localTable.classes
     });
+    console.log("tableSpec : ", tableSpec);
 
     const controlsTree = pruneTreeWithIds({ inSpec: tableSpec });
 
