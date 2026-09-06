@@ -2,15 +2,25 @@
     "serial": true,
     "columnsConfig": [
         {
-            "key": "vchtype",
-            "th": {
-                "style": "text-align: right;"
+            "key": "inwardQty",
+            "tbody": {
+                "th": {
+                    "attributes": {
+                        "style": "text-align:right;",
+                        "class": "iiiiiiikkk"
+                    }
+                }
             }
         },
         {
-            "key": "date",
-            "th": {
-                "style": "text-align: right;"
+            "key": "outwardQty",
+            "tbody": {
+                "th": {
+                    "attributes": {
+                        "style": "text-align:right;",
+                        "class": "kkkkkkkkkk"
+                    }
+                }
             }
         }
     ],

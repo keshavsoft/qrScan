@@ -59,9 +59,11 @@ const renderTable = async ({ inTable, inContainerId, inContainer, inQuery = {} }
     return {
         treeWithIds: controlsTree,
         spec: tableSpec,
-        element: tableElement
+        element: tableElement,
+        store: localTable.store
     };
 };
+
 
 export { renderTable };
 export default renderTable;

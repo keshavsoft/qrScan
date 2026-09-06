@@ -18,15 +18,16 @@ const startFunc = async () => {
         theme: "default",
         columns,
         config: tableConfig,
-        dataProvider,
-        targetContainerId: "table-container"
+        dataProvider
     });
-    console.log("table : ", table);
+
+    const fetchedData = await table.render({ inContainerId: "table-container" });
+    console.log("3. render (Full) : ", fetchedData);
 
     // Fetch data dynamically and render table
-    const fetchedData = await table.load();
-    console.log("fetchedData : ", fetchedData);
-    table.render();
+    // const fetchedData = await table.load();
+    // console.log("fetchedData : ", fetchedData);
+    // table.render();
 
     // 3. Instantiate and render Form
 
@@ -42,7 +43,7 @@ const startFunc = async () => {
     // 4. Instantiate and render DataList populated with fetched records
     const dataList = new DataList({
         theme: "default",
-        data: fetchedData,
+        data: table.store.stateData,
         columns,
         config: datalistConfig,
         targetContainerId: "datalist-container"

@@ -50,9 +50,11 @@ const renderStructure = ({ inTable, inContainerId, inContainer } = {}) => {
     return {
         treeWithIds: controlsTree,
         spec: tableSpec,
-        element: tableElement
+        element: tableElement,
+        store: localTable.store
     };
 };
+
 
 export { renderStructure };
 export default renderStructure;

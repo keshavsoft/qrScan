@@ -48,7 +48,7 @@ const buildCell = ({ inCell, inCellTagName = "td", inDefaultClass = "" } = {}) =
     const textContent = resolveTextContent({ inCell: localCell });
     const attributes = resolveCellAttributes({ inCell: localCell, inDefaultClass: localDefaultClass });
 
-    console.log("-------:", localCell, attributes);
+    // console.log("-------:", localCell, attributes);
 
     return {
         tagName: localCellTagName,
