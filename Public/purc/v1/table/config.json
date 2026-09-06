@@ -5,8 +5,11 @@
             "vchtype",
             "date",
             "vouchernumber",
-            "allinventoryentries.stockitemname",
-            "allinventoryentries.batchallocations.batchname"
+            "stockitemname",
+            "batchname",
+            "inwardQty",
+            "outwardQty",
+            "uom"
         ]
     },
     "row": {

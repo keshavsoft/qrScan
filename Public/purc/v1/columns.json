@@ -15,13 +15,28 @@
         "type": "string"
     },
     {
-        "key": "allinventoryentries.stockitemname",
+        "key": "stockitemname",
         "label": "Stock Item Name",
         "type": "string"
     },
     {
-        "key": "allinventoryentries.batchallocations.batchname",
+        "key": "batchname",
         "label": "Batch Name",
+        "type": "string"
+    },
+    {
+        "key": "inwardQty",
+        "label": "inwardQty",
+        "type": "number"
+    },
+    {
+        "key": "outwardQty",
+        "label": "outwardQty",
+        "type": "number"
+    },
+    {
+        "key": "uom",
+        "label": "uom",
         "type": "string"
     }
 ]

@@ -3,8 +3,8 @@ import tableConfig from "./table/config.json" with { type: "json" };
 import searchConfig from "./search/config.json" with { type: "json" };
 import datalistConfig from "./datalist/config.json" with { type: "json" };
 
-// 1. Hook to locally transported renderers (v11 with modular Form, Table, and DataList)
-import { Table, Form, DataList, createDataProvider } from "https://keshavsoft.github.io/json-to-dom-renderers/dist/v11/min.js";
+// 1. Hook to locally transported renderers (v13 with modular Form, Table, and DataList)
+import { Table, Form, DataList, createDataProvider } from "../../renderers/v13/index.js";
 
 // 2. Data Provider configured with endpoints for autocomplete reading and order insertion
 const dataProvider = createDataProvider({
@@ -46,7 +46,12 @@ const startFunc = async () => {
 
     dataList.render();
 
-    const formElement = fromForm.element;
+    const formElement = fromForm?.element;
+    if (!formElement) {
+        console.warn("Form element was not rendered; skipping button listeners.");
+        return;
+    }
+
     const buttons = formElement.querySelectorAll("button");
 
     buttons.forEach(button => {
