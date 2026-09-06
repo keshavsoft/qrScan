@@ -48,10 +48,12 @@ const createMethods = ({ inTable } = {}) => {
 
     const localRender = () => {
         const result = renderTable({ inTable: localTable });
+
         if (result) {
             localTable.tableElement = result.element;
             localTable.controlsTree = result.treeWithIds;
-        }
+        };
+        // console.log("aaaaaaaaaaa---------", result);
         return result;
     };
 

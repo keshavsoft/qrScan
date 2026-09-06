@@ -21,10 +21,11 @@ const startFunc = async () => {
         dataProvider,
         targetContainerId: "table-container"
     });
+    console.log("table : ", table);
 
     // Fetch data dynamically and render table
     const fetchedData = await table.load();
-
+    console.log("fetchedData : ", fetchedData);
     // 3. Instantiate and render Form
     const form = new Form({
         theme: "default",

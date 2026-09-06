@@ -17,6 +17,7 @@ const createActions = ({ inTable } = {}) => {
 
     const localLoad = async ({ inQuery, query } = {}) => {
         const localQuery = inQuery ?? query ?? {};
+
         return await load({ inTable: localTable, inQuery: localQuery });
     };
 
