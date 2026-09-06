@@ -6,12 +6,31 @@
             "date",
             "vouchernumber",
             "stockitemname",
+            "godownname",
             "batchname",
             "inwardQty",
             "outwardQty",
             "uom"
         ]
     },
+    "foot": [
+        {
+            "id": "aggregate",
+            "type": "aggregate",
+            "values": {
+                "inwardQty": "sum",
+                "outwardQty": "sum"
+            }
+        },
+        {
+            "id": "netValue",
+            "type": "eval",
+            "values": {
+                "inwardQty": "aggregate.inwardQty - aggregate.outwardQty",
+                "outwardQty": "aggregate.outwardQty - aggregate.inwardQty"
+            }
+        }
+    ],
     "row": {
         "striped": true,
         "hover": true

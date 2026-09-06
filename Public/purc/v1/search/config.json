@@ -4,7 +4,9 @@
         "columns": [
             "vouchernumber",
             "vchtype",
-            "allinventoryentries.stockitemname"
+            "stockitemname",
+            "godownname",
+            "batchname"
         ]
     }
 }

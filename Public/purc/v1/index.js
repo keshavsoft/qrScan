@@ -4,7 +4,7 @@ import searchConfig from "./search/config.json" with { type: "json" };
 import datalistConfig from "./datalist/config.json" with { type: "json" };
 
 // 1. Hook to locally transported renderers (v13 with modular Form, Table, and DataList)
-import { Table, Form, DataList, createDataProvider } from "../../renderers/v13/index.js";
+import { Table, Form, DataList, createDataProvider } from "../../renderers/v14/index.js";
 
 // 2. Data Provider configured with endpoints for autocomplete reading and order insertion
 const dataProvider = createDataProvider({

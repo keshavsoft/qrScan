@@ -20,6 +20,11 @@
         "type": "string"
     },
     {
+        "key": "godownname",
+        "label": "Godownn",
+        "type": "string"
+    },
+    {
         "key": "batchname",
         "label": "Batch Name",
         "type": "string"
