@@ -1,6 +1,7 @@
 import { buildHead } from "./parts/buildHead.js";
 import { buildBody } from "./parts/buildBody.js";
 import { buildFoot } from "./parts/buildFoot.js";
+import structure from "./structure.json" with { type: "json" };
 
 const buildTable = ({ inColumns = [], inData = [], inComputedFooter = [], inRowConfig = {}, inClasses = {} } = {}) => {
     const localColumns = inColumns;
@@ -13,14 +14,19 @@ const buildTable = ({ inColumns = [], inData = [], inComputedFooter = [], inRowC
     const tbody = buildBody({ inColumns: localColumns, inData: localData, inRowConfig: localRowConfig, inClasses: localClasses });
     const tfoot = buildFoot({ inColumns: localColumns, inComputedFooter: localComputedFooter, inClasses: localClasses });
 
-    const tableAttributes = localClasses?.table ? { class: localClasses.table } : {};
+    // 1. Pull the base structure shell from structure.json
+    const tableSpec = structuredClone(structure);
 
-    return {
-        tagName: "table",
-        attributes: tableAttributes,
-        children: [thead, tbody, tfoot].filter(Boolean)
-    };
+    // 2. Populate attributes only if classes exist
+    if (localClasses?.table) {
+        tableSpec.attributes.class = localClasses.table;
+    }
+
+    // 3. Populate children
+    tableSpec.children = [thead, tbody, tfoot].filter(Boolean);
+
+    return tableSpec;
 };
 
-export { buildTable };
+export { buildTable, structure };
 export default buildTable;

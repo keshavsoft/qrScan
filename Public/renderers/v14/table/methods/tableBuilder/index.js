@@ -1,4 +1,4 @@
-import { buildTable } from "./buildTable.js";
+import { buildTable, structure } from "./buildTable.js";
 
-export { buildTable };
+export { buildTable, structure };
 export default buildTable;

@@ -45,7 +45,7 @@ class Table {
             inColumns: localColumns,
             inConfig: localConfig
         });
-        console.log("this.store : ", this.store);
+        // console.log("this.store : ", this.store);
         this.methods = createMethods({ inTable: this });
         this.actions = createActions({ inTable: this });
     }

@@ -22,7 +22,9 @@ const buildRow = ({
             const attributes = finalClass ? { class: finalClass } : {};
             if (typeof cell === "object" && cell.id) {
                 attributes.id = cell.id;
-            }
+            };
+            // console.log("attributes : ", attributes);
+
 
             return {
                 tagName: localCellTagName,

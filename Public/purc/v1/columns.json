@@ -11,7 +11,7 @@
     },
     {
         "key": "vouchernumber",
-        "label": "Voucher Number",
+        "label": "Number",
         "type": "string"
     },
     {
