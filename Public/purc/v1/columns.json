@@ -1,0 +1,27 @@
+[
+    {
+        "key": "vchtype",
+        "label": "Voucher Type",
+        "type": "string"
+    },
+    {
+        "key": "date",
+        "label": "Date",
+        "type": "string"
+    },
+    {
+        "key": "vouchernumber",
+        "label": "Voucher Number",
+        "type": "string"
+    },
+    {
+        "key": "allinventoryentries.stockitemname",
+        "label": "Stock Item Name",
+        "type": "string"
+    },
+    {
+        "key": "allinventoryentries.batchallocations.batchname",
+        "label": "Batch Name",
+        "type": "string"
+    }
+]

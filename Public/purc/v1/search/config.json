@@ -1,0 +1,10 @@
+{
+    "searchButtons": true,
+    "body": {
+        "columns": [
+            "vouchernumber",
+            "vchtype",
+            "allinventoryentries.stockitemname"
+        ]
+    }
+}

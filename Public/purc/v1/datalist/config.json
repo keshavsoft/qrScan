@@ -1,0 +1,9 @@
+{
+    "datalist": {
+        "columns": [
+            "vouchernumber",
+            "vchtype",
+            "allinventoryentries.stockitemname"
+        ]
+    }
+}
