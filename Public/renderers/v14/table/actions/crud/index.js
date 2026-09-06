@@ -11,11 +11,33 @@ const load = async ({ inTable, inQuery = {} } = {}) => {
         const fetchedData = await localTable.dataProvider.read({ inQuery: localQuery });
         const records = Array.isArray(fetchedData) ? fetchedData : (fetchedData?.data || []);
         localTable.store.updateData({ inData: records });
-        localTable.render();
+        localTable.buildSpec();
         return records;
     } catch (error) {
         console.error("[json-to-dom-renderers:Table] Failed to load records via dataProvider.read:", error);
         return localTable?.store?.stateData;
+    }
+};
+
+const loadSpec = async ({ inTable, inQuery = {} } = {}) => {
+
+    const localTable = inTable;
+    const localQuery = inQuery;
+
+    if (!localTable?.dataProvider || typeof localTable.dataProvider.read !== "function") {
+        console.warn("[json-to-dom-renderers:Table] Table.loadSpec called without a valid dataProvider.read implementation");
+        return localTable?.spec || localTable?.buildSpec?.();
+    }
+
+    try {
+        const fetchedData = await localTable.dataProvider.read({ inQuery: localQuery });
+        const records = Array.isArray(fetchedData) ? fetchedData : (fetchedData?.data || []);
+        localTable.store.updateData({ inData: records });
+        const spec = localTable.buildSpec();
+        return spec;
+    } catch (error) {
+        console.error("[json-to-dom-renderers:Table] Failed to load spec via dataProvider.read:", error);
+        return localTable?.spec;
     }
 };
 
@@ -26,6 +48,7 @@ const update = ({ inTable, inData = [] } = {}) => {
     localTable.store.updateData({ inData: localData });
     return localTable.render();
 };
+
 
 const createRecord = async ({ inTable, inItem = {} } = {}) => {
     const localTable = inTable;
@@ -64,4 +87,4 @@ const deleteRecord = async ({ inTable, inId = null } = {}) => {
     return result;
 };
 
-export { load, update, createRecord, updateRecord, deleteRecord };
+export { load, loadSpec, update, createRecord, updateRecord, deleteRecord };

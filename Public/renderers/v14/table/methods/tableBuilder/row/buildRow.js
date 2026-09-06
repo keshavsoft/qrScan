@@ -23,28 +23,32 @@ const resolveCellAttributes = ({ inCell, inDefaultClass = "" } = {}) => {
     const cellClass = isObject && localCell.class !== undefined ? localCell.class : localDefaultClass;
     const align = isObject ? localCell.align : "";
     const alignClass = resolveAlignClass({ inAlign: align });
-
     const finalClass = [cellClass, alignClass].filter(Boolean).join(" ").trim();
-    const attributes = finalClass ? { class: finalClass } : {};
 
-    if (isObject && localCell.id) {
-        attributes.id = localCell.id;
+    const localAttributes = finalClass ? { class: finalClass } : {};
+    const inAttributes = isObject && localCell.inAttributes ? localCell.inAttributes : {};
+
+    const attributes = { ...inAttributes };
+
+    for (const [key, value] of Object.entries(localAttributes)) {
+        attributes[key] = attributes[key] ? `${attributes[key]} ${value}`.trim() : value;
     }
 
     return attributes;
 };
 
-const buildCell = ({ inCell, inCellTagName = "td", inDefaultClass = "",
-    inColumnsConfig: inColumnsConfig } = {}) => {
+
+
+const buildCell = ({ inCell, inCellTagName = "td", inDefaultClass = "" } = {}) => {
 
     const localCell = inCell;
     const localCellTagName = inCellTagName;
     const localDefaultClass = inDefaultClass;
-    const localColumnsConfig = inColumnsConfig;
-    console.log("localColumnsConfig:", inCell, localColumnsConfig);
 
     const textContent = resolveTextContent({ inCell: localCell });
     const attributes = resolveCellAttributes({ inCell: localCell, inDefaultClass: localDefaultClass });
+
+    console.log("-------:", localCell, attributes);
 
     return {
         tagName: localCellTagName,
@@ -67,12 +71,18 @@ const buildRow = ({
     const localColumnsConfig = inColumnsConfig;
 
     const rowAttributes = localRowClass ? { class: localRowClass } : {};
-    const children = localCells.map(cell => buildCell({
-        inCell: cell,
-        inCellTagName: localCellTagName,
-        inDefaultClass: localCellClass,
-        inColumnsConfig: localColumnsConfig
-    }));
+
+    const children = localCells.map(cell => {
+        const returnFromBuildCell = buildCell({
+            inCell: cell,
+            inCellTagName: localCellTagName,
+            inDefaultClass: localCellClass,
+            inColumnsConfig: localColumnsConfig
+        });
+
+        // console.log("cell", cell);
+        return returnFromBuildCell;
+    });
 
     return {
         tagName: "tr",

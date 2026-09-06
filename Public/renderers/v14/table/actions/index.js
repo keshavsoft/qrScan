@@ -1,8 +1,9 @@
 import { filterTable, filterOriginalTable, filterStateTable } from "./filter/index.js";
-import { load, update, createRecord, updateRecord, deleteRecord } from "./crud/index.js";
+import { load, loadSpec, update, createRecord, updateRecord, deleteRecord } from "./crud/index.js";
 
 const actions = {
     load,
+    loadSpec,
     update,
     createRecord,
     updateRecord,
@@ -18,8 +19,23 @@ const createActions = ({ inTable } = {}) => {
     const localLoad = async ({ inQuery, query } = {}) => {
         const localQuery = inQuery ?? query ?? {};
 
-        return await load({ inTable: localTable, inQuery: localQuery });
+        return await load({
+            inTable: localTable,
+            inQuery: localQuery
+        });
     };
+
+    const localLoadSpec = async ({ inQuery, query } = {}) => {
+        const localQuery = inQuery ?? query ?? {};
+
+        return await loadSpec({
+            inTable: localTable,
+            inQuery: localQuery
+        });
+    };
+
+
+
 
     const localUpdate = ({ inData, data } = {}) => {
         const localData = inData ?? data ?? [];
@@ -64,6 +80,7 @@ const createActions = ({ inTable } = {}) => {
 
     return {
         load: localLoad,
+        loadSpec: localLoadSpec,
         update: localUpdate,
         createRecord: localCreateRecord,
         updateRecord: localUpdateRecord,
@@ -78,6 +95,7 @@ export {
     actions,
     createActions,
     load,
+    loadSpec,
     update,
     createRecord,
     updateRecord,
@@ -87,3 +105,4 @@ export {
     filterStateTable
 };
 export default actions;
+

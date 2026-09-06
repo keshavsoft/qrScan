@@ -1,29 +1,17 @@
 import { buildSpec } from "./buildSpec.js";
 import { pruneTreeWithIds } from "../../../common/pruneTreeWithIds.js";
 
-const renderTable = async ({ inTable, inContainerId, inContainer, inQuery = {} } = {}) => {
+const renderStructure = ({ inTable, inContainerId, inContainer } = {}) => {
     const localTable = inTable;
     const localContainerId = inContainerId;
     const localContainer = inContainer;
-    const localQuery = inQuery;
 
     if (!localTable) {
-        console.error("[json-to-dom-renderers:Table] Table instance (inTable) is required to render.");
-        return {
-            treeWithIds: null,
-            spec: null,
-            element: null,
-            error: "Table instance (inTable) is required"
-        };
+        console.error("[json-to-dom-renderers:Table] Table instance (inTable) is required to render structure.");
+        return null;
     }
 
-    // Internally call load() which pulls data and calls buildSpec() internally
-    if (localTable.dataProvider && typeof localTable.load === "function") {
-        await localTable.load({ inQuery: localQuery });
-    } else {
-        buildSpec({ inTable: localTable });
-    }
-
+    // Pure structure from current store (no data fetching)
     const tableSpec = localTable.spec || buildSpec({ inTable: localTable });
     const controlsTree = pruneTreeWithIds({ inSpec: tableSpec });
 
@@ -40,7 +28,7 @@ const renderTable = async ({ inTable, inContainerId, inContainer, inQuery = {} }
     const domElement = builder({ inSpec: tableSpec });
     const tableElement = Array.isArray(domElement) ? domElement[0] : domElement;
 
-    // Resolve target container if provided
+    // Resolve target container
     let container = null;
     if (localContainer instanceof HTMLElement) {
         container = localContainer;
@@ -56,6 +44,9 @@ const renderTable = async ({ inTable, inContainerId, inContainer, inQuery = {} }
         container.appendChild(tableElement);
     }
 
+    localTable.tableElement = tableElement;
+    localTable.controlsTree = controlsTree;
+
     return {
         treeWithIds: controlsTree,
         spec: tableSpec,
@@ -63,5 +54,5 @@ const renderTable = async ({ inTable, inContainerId, inContainer, inQuery = {} }
     };
 };
 
-export { renderTable };
-export default renderTable;
+export { renderStructure };
+export default renderStructure;

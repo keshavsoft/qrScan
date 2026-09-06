@@ -15,8 +15,9 @@ class Table {
         theme,
         classes = {},
         dataProvider = null,
-        targetContainerId = "table-container"
+        targetContainerId = ""
     } = {}) {
+
         const localData = data;
         const localColumns = columns;
         const localConfig = config;
@@ -48,7 +49,9 @@ class Table {
         // console.log("this.store : ", this.store);
         this.methods = createMethods({ inTable: this });
         this.actions = createActions({ inTable: this });
+        this.spec = this.buildSpec();
     }
+
 
     setLayout({ layout = "compact", inLayout } = {}) {
         const localLayout = inLayout || layout || "compact";
@@ -60,9 +63,24 @@ class Table {
         return setTheme({ inTable: this, inTheme: localTheme });
     }
 
-    render() {
-        return this.methods.render();
+    buildSpec() {
+        return this.methods.buildSpec();
     }
+
+    renderStructure(args = {}) {
+        return this.methods.renderStructure(args);
+    }
+
+    async loadSpec(args = {}) {
+        return await this.actions.loadSpec(args);
+    }
+
+    async render(args = {}) {
+        return await this.methods.render(args);
+    }
+
+
+
 
     getControlsTree() {
         return this.controlsTree;

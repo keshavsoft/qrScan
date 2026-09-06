@@ -9,7 +9,7 @@ const buildBody = ({ inColumns = [], inData = [], inRowConfig = {},
     const localClasses = inClasses;
     const localColumnsConfig = inColumnsConfig;
 
-    // console.log("localColumnsConfig-------:", localColumnsConfig);
+    // console.log("----------------:", localColumnsConfig);
 
     if (!Array.isArray(localData) || localData.length === 0) {
         const emptyRow = {
@@ -40,11 +40,15 @@ const buildBody = ({ inColumns = [], inData = [], inRowConfig = {},
                 return loopConfig.key === col.key;
             });
 
-            // console.log("findConfig : ", findConfig);
+            const loopInsideAttributes = findConfig?.tbody?.td?.attributes || findConfig?.tbody?.th?.attributes;
+
+            // console.log("findConfig---- : ", findConfig?.tbody?.th?.attributes);
+
+            // console.log("findConfig---- : ", findConfig?.tbody?.th?.attributes);
 
             return {
                 textContent: col.key === "amount" ? Number(row[col.key]).toFixed(2) : String(row[col.key] ?? ""),
-                align: col.align,
+                align: col.align, inAttributes: loopInsideAttributes,
                 style: findConfig?.th?.style
             }
         });
@@ -55,8 +59,7 @@ const buildBody = ({ inColumns = [], inData = [], inRowConfig = {},
             inCellTagName: "td",
             inCells: cells,
             inRowClass: localClasses?.tr || "",
-            inCellClass: localClasses?.td || "",
-            inColumnsConfig: localColumnsConfig
+            inCellClass: localClasses?.td || ""
         });
     });
 

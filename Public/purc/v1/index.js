@@ -26,7 +26,10 @@ const startFunc = async () => {
     // Fetch data dynamically and render table
     const fetchedData = await table.load();
     console.log("fetchedData : ", fetchedData);
+    table.render();
+
     // 3. Instantiate and render Form
+
     const form = new Form({
         theme: "default",
         columns,

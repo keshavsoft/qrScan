@@ -1,5 +1,5 @@
 import { repaintBody, repaintFoot, refreshTable } from "./repaints/index.js";
-import { renderTable } from "./render/index.js";
+import { renderTable, renderStructure, buildSpec } from "./render/index.js";
 import { buildTable } from "./tableBuilder/index.js";
 
 const methods = {
@@ -7,11 +7,18 @@ const methods = {
     repaintFoot,
     refreshTable,
     renderTable,
+    renderStructure,
+    buildSpec,
     buildTable
 };
 
+
 const createMethods = ({ inTable } = {}) => {
     const localTable = inTable;
+
+    const localBuildSpec = () => {
+        return buildSpec({ inTable: localTable });
+    };
 
     const localRepaintBody = () => {
         if (!localTable?.tableElement) return;
@@ -46,24 +53,54 @@ const createMethods = ({ inTable } = {}) => {
         });
     };
 
-    const localRender = () => {
-        const result = renderTable({ inTable: localTable });
+    const localRender = async ({ inContainerId, inContainer, targetContainerId, inQuery = {} } = {}) => {
+        const localContainerId = inContainerId || targetContainerId;
+        const localContainer = inContainer;
+        const localQuery = inQuery;
 
-        if (result) {
+        const result = await renderTable({
+            inTable: localTable,
+            inContainerId: localContainerId,
+            inContainer: localContainer,
+            inQuery: localQuery
+        });
+
+        if (result?.element) {
             localTable.tableElement = result.element;
             localTable.controlsTree = result.treeWithIds;
-        };
-        // console.log("aaaaaaaaaaa---------", result);
+        }
+
+        return result;
+    };
+
+    const localRenderStructure = ({ inContainerId, inContainer, targetContainerId } = {}) => {
+        const localContainerId = inContainerId || targetContainerId;
+        const localContainer = inContainer;
+
+        const result = renderStructure({
+            inTable: localTable,
+            inContainerId: localContainerId,
+            inContainer: localContainer
+        });
+
+        if (result?.element) {
+            localTable.tableElement = result.element;
+            localTable.controlsTree = result.treeWithIds;
+        }
+
         return result;
     };
 
     return {
+        buildSpec: localBuildSpec,
         repaintBody: localRepaintBody,
         repaintFoot: localRepaintFoot,
         refreshTable: localRefreshTable,
+        renderStructure: localRenderStructure,
         render: localRender
     };
 };
 
-export { methods, createMethods, repaintBody, repaintFoot, refreshTable, renderTable, buildTable };
+export { methods, createMethods, buildSpec, repaintBody, repaintFoot, refreshTable, renderTable, renderStructure, buildTable };
 export default methods;
+

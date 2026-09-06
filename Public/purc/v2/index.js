@@ -1,32 +1,51 @@
 import columns from "./columns.json" with { type: "json" };
 import tableConfig from "./table/config.json" with { type: "json" };
+import spec from "./spec.json" with { type: "json" };
 
-// 1. Hook to locally transported renderers (v13 with modular Form, Table, and DataList)
+
+// 1. Hook to locally transported renderers (v14 with modular Table)
 import { Table, createDataProvider } from "../../renderers/v14/index.js";
 
-// 2. Data Provider configured with endpoints for autocomplete reading and order insertion
+// 2. Data Provider configured with endpoints for data reading
 const dataProvider = createDataProvider({
     inReadUrl: "./data.json",
     inCreateUrl: "./data.json"
 });
 
 const startFunc = async () => {
-    // 2. Instantiate Table with dataProvider (no hardcoded data!)
+    // Instantiate Table with dataProvider
     const table = new Table({
         theme: "default",
         columns,
         config: tableConfig,
-        dataProvider,
-        targetContainerId: "table-container"
+        dataProvider
     });
-    console.log("table : ", table);
+    console.log("table : ", spec);
 
-    // Fetch data dynamically and render table
-    // const renderedData = await table.render();
-    // const localData = await table.load();
+    // =========================================================================
+    // 1. Render Structure Only: Zero fetch, mounts table skeleton to DOM
+    // =========================================================================
+    // const structureResult = table.renderStructure({ inContainerId: "table-container" });
+    // console.log("1. renderStructure : ", structureResult);
 
-    // console.log("renderedData : ", renderedData);
-    // console.log("localData : ", localData);
+    // =========================================================================
+    // 2. Load Spec Only: Calls fetch, builds DOM-ready JSON spec (Zero DOM)
+    // =========================================================================
+    // const domReadySpec = await table.loadSpec();
+    // console.log("2. loadSpec (DOM-ready JSON) : ", domReadySpec);
+
+    // =========================================================================
+    // 3. Full Render: Calls fetch internally, builds spec, & mounts to DOM
+    // =========================================================================
+    const rendered = await table.render({ inContainerId: "table-container" });
+    console.log("3. render (Full) : ", rendered);
+
+    // const builder = window.ks?.["json-to-dom"]?.buildSpecElement; ``
+    // const domElement = builder({ inSpec: spec });
+
+    // document.getElementById("table-container").appendChild(domElement);
+    // console.log("domElement : ", domElement);
+
 };
 
 startFunc();
