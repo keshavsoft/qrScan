@@ -3,6 +3,7 @@ import { pruneTreeWithIds } from "../../../common/pruneTreeWithIds.js";
 
 const renderTable = ({ inTable } = {}) => {
     const localTable = inTable;
+
     if (!localTable) {
         console.error("[json-to-dom-renderers:Table] Table instance (inTable) is required to render.");
         return {
@@ -23,14 +24,17 @@ const renderTable = ({ inTable } = {}) => {
             element: null,
             error: `Target container "#${containerId}" not found in DOM.`
         };
-    }
+    };
+
+    const columnsConfig = localTable.store.source.config.columnsConfig;
 
     const tableSpec = buildTable({
         inColumns: localTable.store.activeColumns,
         inData: localTable.store.stateData,
         inComputedFooter: localTable.store.computedFooter,
         inRowConfig: localTable.store.config?.row,
-        inClasses: localTable.classes
+        inClasses: localTable.classes,
+        inColumnsConfig: columnsConfig
     });
     // console.log("tableSpec : ", tableSpec);
 

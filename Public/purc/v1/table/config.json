@@ -1,5 +1,19 @@
 {
     "serial": true,
+    "columnsConfig": [
+        {
+            "key": "vchtype",
+            "th": {
+                "style": "text-align: right;"
+            }
+        },
+        {
+            "key": "date",
+            "th": {
+                "style": "text-align: right;"
+            }
+        }
+    ],
     "head": {
         "columns": [
             "vchtype",
