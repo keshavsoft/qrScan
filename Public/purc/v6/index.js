@@ -6,11 +6,11 @@ import datalistConfig from "./datalist/config.json" with { type: "json" };
 // 1. Hook to locally transported renderers (v13 with modular Form, Table, and DataList)
 // import { Table, Form, DataList, createDataProvider } from "../../renderers/v14/index.js";
 // import { Table, Form, DataList, createDataProvider } from "https://keshavsoft.github.io/json-to-dom-renderers/dist/v14/min.js";
-// import { Table } from "https://keshavsoft.github.io/json-to-dom-table/dist/v1/min.js";
-import { Table } from "../../renderers/table/v2/index.js";
+import { Table } from "https://keshavsoft.github.io/json-to-dom-table/dist/v2/min.js";
+// import { Table } from "../../renderers/table/v2/index.js";
 import { Form } from "https://keshavsoft.github.io/json-to-dom-form/dist/v1/min.js";
-// import { DataList } from "https://keshavsoft.github.io/json-to-dom-datalist/dist/v2/min.js";
-import { DataList } from "../../renderers/datalist/v2/index.js";
+import { DataList } from "https://keshavsoft.github.io/json-to-dom-datalist/dist/v2/min.js";
+// import { DataList } from "../../renderers/datalist/v2/index.js";
 import { createDataProvider } from "https://keshavsoft.github.io/json-to-dom-provider/dist/v1/min.js";
 
 // 2. Data Provider configured with endpoints for autocomplete reading and order insertion
