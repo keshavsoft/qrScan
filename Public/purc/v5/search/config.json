@@ -1,0 +1,12 @@
+{
+    "searchButtons": true,
+    "body": {
+        "columns": [
+            "vouchernumber",
+            "vchtype",
+            "stockitemname",
+            "godownname",
+            "batchname"
+        ]
+    }
+}

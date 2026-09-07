@@ -1,0 +1,47 @@
+[
+    {
+        "key": "vchtype",
+        "label": "Voucher Type",
+        "type": "string"
+    },
+    {
+        "key": "date",
+        "label": "Date",
+        "type": "string"
+    },
+    {
+        "key": "vouchernumber",
+        "label": "Number",
+        "type": "string"
+    },
+    {
+        "key": "stockitemname",
+        "label": "Stock Item Name",
+        "type": "string"
+    },
+    {
+        "key": "godownname",
+        "label": "Godownn",
+        "type": "string"
+    },
+    {
+        "key": "batchname",
+        "label": "Batch Name",
+        "type": "string"
+    },
+    {
+        "key": "inwardQty",
+        "label": "inwardQty",
+        "type": "number"
+    },
+    {
+        "key": "outwardQty",
+        "label": "outwardQty",
+        "type": "number"
+    },
+    {
+        "key": "uom",
+        "label": "uom",
+        "type": "string"
+    }
+]
