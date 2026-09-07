@@ -1,16 +1,16 @@
 {
-    "searchButtons": true,
-    "body": {
-        "columns": [
-            "vouchernumber",
-            "vchtype",
-            "stockitemname",
-            "godownname",
-            "batchname",
-            "inwardQty",
-            "outwardQty",
-            "uom"
-        ]
-    },
-    "layout": "horizontal"
+  "body": {
+    "columns": [
+      "vouchernumber",
+      "vchtype",
+      "stockitemname",
+      "godownname",
+      "batchname",
+      "inwardQty",
+      "outwardQty",
+      "uom"
+    ]
+  },
+  "layout": "horizontal",
+  "searchButtons": true
 }

@@ -1,12 +1,12 @@
 {
-    "datalist": {
-        "columns": [
-            "vouchernumber",
-            "vchtype",
-            "stockitemname",
-            "godownname",
-            "batchname",
-            "uom"
-        ]
-    }
+  "datalist": {
+    "columns": [
+      "vouchernumber",
+      "vchtype",
+      "stockitemname",
+      "godownname",
+      "batchname",
+      "uom"
+    ]
+  }
 }
