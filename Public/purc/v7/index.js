@@ -69,6 +69,15 @@ const resetFilters = ({ inTable, inDataList, inFormElement, inBadgeElement } = {
             inTotalCount: localTable.store.rawData.length
         });
     }
+
+    // 5. If mobile navbar is expanded, collapse it
+    const navCollapseElement = document.getElementById("mobileNavCollapse");
+    if (navCollapseElement && navCollapseElement.classList.contains("show")) {
+        const bsCollapse = window.bootstrap?.Collapse?.getInstance(navCollapseElement);
+        if (bsCollapse) {
+            bsCollapse.hide();
+        }
+    }
 };
 
 const startFunc = async () => {
@@ -119,6 +128,7 @@ const startFunc = async () => {
     // Hook up In-Memory Reset triggers
     const resetTriggers = [
         document.getElementById("nav-reset-btn"),
+        document.getElementById("mobile-nav-reset-btn"),
         document.getElementById("header-reset-btn"),
         document.getElementById("card-clear-filters-btn")
     ];
