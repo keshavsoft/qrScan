@@ -1,0 +1,12 @@
+{
+  "datalist": {
+    "columns": [
+      "vouchernumber",
+      "vouchertypename",
+      "stockitemname",
+      "godownname",
+      "batchname",
+      "uom"
+    ]
+  }
+}
