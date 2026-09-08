@@ -1,0 +1,27 @@
+{
+    "targetContainerId": "header-container",
+    "mobileFlavor": "list",
+    "brand": null,
+    "items": [
+        { "id": "v1", "label": "v1: Equal 50/50", "icon": "bi-1-square", "href": "../v1/" },
+        { "id": "v2", "label": "v2: Asymmetric 4/8", "icon": "bi-2-square", "href": "../v2/" },
+        { "id": "v3", "label": "v3: Divided Sections", "icon": "bi-3-square", "href": "../v3/" },
+        { "id": "v4", "label": "v4: Dual Cards", "icon": "bi-4-square", "href": "../v4/" },
+        { "id": "v5", "label": "v5: Horizontal Rows", "icon": "bi-5-square", "href": "../v5/", "active": true },
+        { "id": "to-1col", "label": "← Single-Col", "icon": "bi-layout-sidebar", "href": "../../single-column/v1/", "class": "btn btn-sm btn-outline-info ms-2" },
+        { "id": "to-3col", "label": "Three-Col →", "icon": "bi-grid-3x3-gap", "href": "../../three-column/v1/", "class": "btn btn-sm btn-outline-info" },
+        { "id": "reset", "label": "Reset", "icon": "bi-arrow-clockwise", "class": "text-info", "isAction": true, "title": "Instantly reset filtered data" }
+    ],
+    "subHeader": {
+        "status": {
+            "id": "record-count-badge",
+            "label": "Status:",
+            "badgeText": "Loading records...",
+            "badgeClass": "badge bg-secondary"
+        },
+        "actions": [
+            { "id": "header-reset-btn", "label": "Reset Filters", "icon": "bi-arrow-clockwise", "class": "btn btn-sm btn-primary" },
+            { "id": "header-reload-btn", "label": "Reload Server", "icon": "bi-cloud-arrow-down", "class": "btn btn-sm btn-outline-secondary", "title": "Full refresh from server" }
+        ]
+    }
+}

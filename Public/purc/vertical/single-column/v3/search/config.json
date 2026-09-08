@@ -1,0 +1,17 @@
+{
+  "container": null,
+  "body": {
+    "columns": [
+      "vouchernumber",
+      "vchtype",
+      "stockitemname",
+      "godownname",
+      "batchname",
+      "inwardQty",
+      "outwardQty",
+      "uom"
+    ]
+  },
+  "layout": "stacked",
+  "searchButtons": false
+}

@@ -1,0 +1,37 @@
+{
+  "container": {
+    "class": "card shadow border-primary border-opacity-25 mb-4",
+    "header": {
+      "title": "Purchase Order Search (Accent Card)",
+      "icon": "bi bi-search",
+      "class": "card-header bg-primary bg-opacity-10 py-3 d-flex justify-content-between align-items-center",
+      "actions": [
+        {
+          "id": "reset-all-filters-btn",
+          "label": "Reset All",
+          "icon": "bi bi-arrow-counterclockwise",
+          "class": "btn btn-sm btn-outline-primary"
+        }
+      ]
+    },
+    "bodyClass": "card-body",
+    "footer": {
+      "text": "Start typing in any field to filter dynamically across all purchase vouchers.",
+      "class": "card-footer bg-transparent text-muted small py-2"
+    }
+  },
+  "body": {
+    "columns": [
+      "vouchernumber",
+      "vchtype",
+      "stockitemname",
+      "godownname",
+      "batchname",
+      "inwardQty",
+      "outwardQty",
+      "uom"
+    ]
+  },
+  "layout": "stacked",
+  "searchButtons": false
+}
