@@ -111,16 +111,9 @@ const onSearchButtonClick = ({ inEvent, inTable, inDataList, inFormElement, inMe
     const localDataList = inDataList;
     const localFormElement = inFormElement;
     const localMenu = inMenu;
-    // console.log("localEvent : ", localEvent);
-    const outputFromInside = localEvent.output;
 
-    // const button = localEvent.currentTarget;
-    // const { query, row } = getFilterQueryFromRow({ inButton: button });
-    let query = {};
-    query[outputFromInside.name] = outputFromInside.value;
-
-    const row = outputFromInside?.closestElement;
-    // console.log("query : ", query);
+    const button = localEvent.currentTarget;
+    const { query, row } = getFilterQueryFromRow({ inButton: button });
 
     highlightRow({ inRow: row, inFormElement: localFormElement });
 
@@ -235,11 +228,8 @@ const hookSearchButtons = ({ inFormElement, inTable, inDataList, inMenu } = {}) 
     }
 
     const buttons = localFormElement.querySelectorAll("button");
-    // console.log("buttons : ", buttons);
-
     buttons.forEach(button => {
         button.addEventListener("click", event => {
-            // console.log("event : ", event);
             onSearchButtonClick({
                 inEvent: event,
                 inTable: localTable,

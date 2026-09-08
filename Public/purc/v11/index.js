@@ -6,10 +6,12 @@ import menuConfig from "./menu/config.json" with { type: "json" };
 
 // 1. Renderers pulled via GitHub Pages docs/dist bundles
 import { Table } from "https://keshavsoft.github.io/json-to-dom-table/dist/v2/min.js";
-import { Form } from "https://keshavsoft.github.io/json-to-dom-form/dist/v1/min.js";
+// import { Form } from "https://keshavsoft.github.io/json-to-dom-form/dist/v1/min.js";
 import { DataList } from "https://keshavsoft.github.io/json-to-dom-datalist/dist/v2/min.js";
 import { createDataProvider } from "https://keshavsoft.github.io/json-to-dom-provider/dist/v1/min.js";
 import { Menu } from "https://keshavsoft.github.io/json-to-dom-menu/dist/v1/min.js";
+
+import { Form } from "./form/index.js";
 
 // 2. Event listeners and menu actions
 import { onItemClick, onActionClick, addListeners, updateBadge } from "./addListeners.js";
@@ -37,7 +39,7 @@ const startFunc = async () => {
         dataProvider
     });
     const fetchedData = await table.render({ inContainerId: "table-container" });
-    console.log("3. render (Full) : ", fetchedData);
+    // console.log("3. render (Full) : ", fetchedData);
 
     // 6. Instantiate and render Form
     const form = new Form({
@@ -46,7 +48,8 @@ const startFunc = async () => {
         config: searchConfig,
         targetContainerId: "filter-container"
     });
-    const fromForm = form.render();
+
+    const fromForm = await form.render();
     const formElement = fromForm?.element;
 
     // 7. Instantiate and render DataList populated with fetched records
@@ -66,15 +69,22 @@ const startFunc = async () => {
             inStateCount: table.store.stateData.length,
             inTotalCount: table.store.rawData.length
         });
-    }
+    };
 
+    // const k1 = document.getElementById("vouchernumber-search");
+
+    // k1.addEventListener("click", (event) => {
+    //     console.log("clicked: ", event);
+    // });
     // 9. Hook up all DOM events (Search buttons and Card Clear button)
+
     addListeners({
         inTable: table,
         inDataList: dataList,
         inFormElement: formElement,
         inMenu: menu
     });
+
 };
 
 startFunc();

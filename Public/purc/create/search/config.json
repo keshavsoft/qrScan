@@ -1,0 +1,16 @@
+{
+  "body": {
+    "columns": [
+      "vouchernumber",
+      "vouchertypename",
+      "stockitemname",
+      "godownname",
+      "batchname",
+      "inwardQty",
+      "outwardQty",
+      "uom"
+    ]
+  },
+  "layout": "horizontal",
+  "searchButtons": true
+}
