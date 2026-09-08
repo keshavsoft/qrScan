@@ -1,0 +1,31 @@
+{
+  "container": null,
+  "sections": [
+    {
+      "title": "Document & Voucher Details",
+      "icon": "bi bi-receipt text-primary",
+      "class": "col-md-6",
+      "card": true,
+      "columns": [
+        "vouchernumber",
+        "vchtype",
+        "stockitemname",
+        "godownname"
+      ]
+    },
+    {
+      "title": "Batch & Quantity Details",
+      "icon": "bi bi-boxes text-success",
+      "class": "col-md-6",
+      "card": true,
+      "columns": [
+        "batchname",
+        "inwardQty",
+        "outwardQty",
+        "uom"
+      ]
+    }
+  ],
+  "layout": "stacked",
+  "searchButtons": false
+}

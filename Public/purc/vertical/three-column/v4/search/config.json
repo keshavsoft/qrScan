@@ -1,0 +1,39 @@
+{
+  "container": null,
+  "sections": [
+    {
+      "title": "Document Details",
+      "icon": "bi bi-receipt text-primary",
+      "class": "col-md-4",
+      "card": true,
+      "columns": [
+        "vouchernumber",
+        "vchtype"
+      ]
+    },
+    {
+      "title": "Stock & Warehouse",
+      "icon": "bi bi-building text-info",
+      "class": "col-md-4",
+      "card": true,
+      "columns": [
+        "stockitemname",
+        "godownname"
+      ]
+    },
+    {
+      "title": "Batch & Quantity",
+      "icon": "bi bi-boxes text-success",
+      "class": "col-md-4",
+      "card": true,
+      "columns": [
+        "batchname",
+        "inwardQty",
+        "outwardQty",
+        "uom"
+      ]
+    }
+  ],
+  "layout": "stacked",
+  "searchButtons": false
+}

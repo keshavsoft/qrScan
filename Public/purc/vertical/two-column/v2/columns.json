@@ -1,0 +1,50 @@
+[
+    {
+        "key": "vouchernumber",
+        "label": "No.",
+        "type": "string",
+        "colClass": "col-md-4"
+    },
+    {
+        "key": "vchtype",
+        "label": "Voucher Type",
+        "type": "string",
+        "colClass": "col-md-8"
+    },
+    {
+        "key": "godownname",
+        "label": "Godown",
+        "type": "string",
+        "colClass": "col-md-4"
+    },
+    {
+        "key": "stockitemname",
+        "label": "Stock Item Name",
+        "type": "string",
+        "colClass": "col-md-8"
+    },
+    {
+        "key": "batchname",
+        "label": "Batch",
+        "type": "string",
+        "colClass": "col-md-4"
+    },
+    {
+        "key": "inwardQty",
+        "label": "Inward Qty",
+        "type": "number",
+        "colClass": "col-md-4"
+    },
+    {
+        "key": "outwardQty",
+        "label": "Outward Qty",
+        "type": "number",
+        "colClass": "col-md-4"
+    },
+    {
+        "key": "uom",
+        "label": "UOM",
+        "type": "string",
+        "colClass": "col-md-4"
+    }
+]

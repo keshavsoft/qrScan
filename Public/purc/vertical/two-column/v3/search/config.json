@@ -1,0 +1,44 @@
+{
+  "container": {
+    "class": "card shadow-sm border-0 mb-4",
+    "header": {
+      "title": "2-Column Divided Sections (Left & Right Stacks)",
+      "icon": "bi bi-columns-gap",
+      "actions": [
+        {
+          "id": "card-clear-filters-btn",
+          "label": "Clear",
+          "icon": "bi bi-x-circle",
+          "class": "btn btn-sm btn-outline-secondary"
+        }
+      ]
+    },
+    "bodyClass": "card-body"
+  },
+  "sections": [
+    {
+      "title": "Voucher & Item Information",
+      "icon": "bi bi-receipt",
+      "class": "col-md-6",
+      "columns": [
+        "vouchernumber",
+        "vchtype",
+        "stockitemname",
+        "godownname"
+      ]
+    },
+    {
+      "title": "Batch & Quantity Information",
+      "icon": "bi bi-boxes",
+      "class": "col-md-6",
+      "columns": [
+        "batchname",
+        "inwardQty",
+        "outwardQty",
+        "uom"
+      ]
+    }
+  ],
+  "layout": "stacked",
+  "searchButtons": false
+}
