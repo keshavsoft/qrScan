@@ -6,12 +6,14 @@ import menuConfig from "./menu/config.json" with { type: "json" };
 
 // 1. Renderers pulled via GitHub Pages docs/dist bundles
 import { Table } from "https://keshavsoft.github.io/json-to-dom-table/dist/v2/min.js";
-// import { Form } from "https://keshavsoft.github.io/json-to-dom-form/dist/v1/min.js";
+
+import { Form } from "https://keshavsoft.github.io/json-to-dom-form/dist/v9/min.js";
+
 import { DataList } from "https://keshavsoft.github.io/json-to-dom-datalist/dist/v2/min.js";
 import { createDataProvider } from "https://keshavsoft.github.io/json-to-dom-provider/dist/v1/min.js";
 import { Menu } from "https://keshavsoft.github.io/json-to-dom-menu/dist/v1/min.js";
 
-import { Form } from "./form/index.js";
+// import { Form } from "./form/index.js";
 
 // 2. Event listeners and menu actions
 import { onItemClick, onActionClick, addListeners, updateBadge } from "./addListeners.js";

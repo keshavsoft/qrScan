@@ -1,36 +1,36 @@
 [
     {
-        "key": "vouchertypename",
+        "key": "VOUCHERTYPENAME",
         "label": "Voucher Type",
         "type": "string"
     },
     {
-        "key": "date",
+        "key": "DATE",
         "label": "Date",
         "type": "string"
     },
     {
-        "key": "vouchernumber",
+        "key": "VOUCHERNUMBER",
         "label": "No.",
         "type": "string"
     },
     {
-        "key": "stockitemname",
+        "key": "STOCKITEMNAME",
         "label": "Stock Item Name",
         "type": "string"
     },
     {
-        "key": "godownname",
+        "key": "GODOWNNAME",
         "label": "Godown",
         "type": "string"
     },
     {
-        "key": "batchname",
+        "key": "BATCHNAME",
         "label": "Batch",
         "type": "string"
     },
     {
-        "key": "inwardQty",
+        "key": "BATCHACTUALQTY",
         "label": "inward",
         "type": "number"
     },

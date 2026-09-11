@@ -10,31 +10,31 @@
             "width": "50px"
         },
         {
-            "key": "vouchertypename",
-            "width": "140px"
+            "key": "VOUCHERTYPENAME",
+            "width": "100px"
         },
         {
-            "key": "date",
-            "width": "140px"
+            "key": "DATE",
+            "width": "50px"
         },
         {
-            "key": "vouchernumber",
-            "width": "80px"
+            "key": "VOUCHERNUMBER",
+            "width": "30px"
         },
         {
-            "key": "stockitemname",
+            "key": "STOCKITEMNAME",
             "width": "260px"
         },
         {
-            "key": "godownname",
+            "key": "GODOWNNAME",
             "width": "150px"
         },
         {
-            "key": "batchname",
+            "key": "BATCHNAME",
             "width": "120px"
         },
         {
-            "key": "inwardQty",
+            "key": "BATCHACTUALQTY",
             "width": "110px"
         },
         {
@@ -72,10 +72,13 @@
     ],
     "head": {
         "columns": [
-            "vouchertypename",
-            "date",
-            "vouchernumber",
-            "stockitemname"
+            "VOUCHERTYPENAME",
+            "DATE",
+            "VOUCHERNUMBER",
+            "STOCKITEMNAME",
+            "GODOWNNAME",
+            "BATCHNAME",
+            "BATCHACTUALQTY"
         ]
     },
     "foot": [
