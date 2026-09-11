@@ -1,14 +1,11 @@
 {
   "body": {
     "columns": [
-      "vouchernumber",
-      "vouchertypename",
-      "stockitemname",
-      "godownname",
-      "batchname",
-      "inwardQty",
-      "outwardQty",
-      "uom"
+      "VOUCHERTYPENAME",
+      "DATE",
+      "STOCKITEMNAME",
+      "GODOWNNAME",
+      "BATCHNAME"
     ]
   },
   "layout": "horizontal",

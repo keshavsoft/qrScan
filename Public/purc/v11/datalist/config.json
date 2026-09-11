@@ -1,8 +1,11 @@
 {
   "datalist": {
     "columns": [
-      "vouchernumber",
-      "vouchertypename"
+      "VOUCHERTYPENAME",
+      "DATE",
+      "STOCKITEMNAME",
+      "GODOWNNAME",
+      "BATCHNAME"
     ]
   }
 }
